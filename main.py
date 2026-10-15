@@ -97,7 +97,6 @@ def registro_panes_hechos():
                         azucar-=(produccion*5)
                         print("")
                         print("Stock de ingredientes actualizado.")
-                        print("")
                         pan_producible()
                     else:
                         print("Cantidad invalida, supera la cantidad de azucar del stock.")
@@ -119,8 +118,14 @@ def registro_panes_hechos():
         print("Cantidad invalida, supera la cantidad de harina del stock.")
         print("Stock no actualizado.")
         print("")
+    continuar()
 
-
+def cuantos_ingredientes():
+    print("Cuantos panes quieres hacer?")
+    numero=int(input("Digite el numero: "))
+    print(f"Para hacer {numero} panes, necesitas: ")
+    print(f"{numero*300}gr de harina, {numero*180}ml de agua, {numero*6}gr de sal, {numero*3}gr de levadura y {numero*5}gr de azucar.")
+    continuar()
 
 
 
@@ -132,6 +137,7 @@ def menu():
     print("1. Ver stock de ingredientes. ")
     print("2. Cuantos panes se pueden hacer?")
     print("3. Ingresar panes preparados hoy.")
+    print("4. Calcular la cantidad de ingredientes para hacer un numero de panes.")
     print("0. Para salir.")
     opcion= int(input("Digite una opcion: "))
     if opcion == 1:
@@ -140,6 +146,8 @@ def menu():
         pan_producible()
     elif opcion ==3:
         registro_panes_hechos()
+    elif opcion ==4:
+        cuantos_ingredientes()
     elif opcion == 0:
         quit()
     else:
