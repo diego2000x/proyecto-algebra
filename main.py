@@ -20,7 +20,8 @@ print(nombre)
 print("")
 
 productos={}
-datos="productos.pkl"
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+datos = os.path.join(BASE_DIR, "productos.pkl")
 
 def guardar_productos():
     with open(datos, "wb") as db:
