@@ -1,3 +1,3 @@
-# Sistema de stock de una panaderia.
+# Sistema de stock de una tienda.
 
-App simple para controlar los ingredientes de una panaderia en Python.
+App simple para controlar el stock de productos en una tienda.
