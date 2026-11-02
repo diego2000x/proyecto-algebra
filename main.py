@@ -58,12 +58,30 @@ def ver_productos():
         contador+=1
     continuar()
 
+def eliminar_producto():
+    limpiar_pantalla()
+    print("¿Que producto desea eliminar?")
+    contador=1
+    for producto in productos.values():
+        print(f"{contador}. {producto.nombre}.")
+        contador+=1
+    opcion=int(input("Seleccione el numero de producto desea eliminar: "))
+    nombres = list(productos.keys())
+    print(f"Eliminando {nombres[opcion-1]}.")
+    elegido=nombres[opcion-1]
+    del productos[elegido]
+    print("")
+    guardar_productos()
+    print("Producto eliminado.")
+    continuar()
+
 
 def menu():
     print("-------- Menu Principal --------")
     print("")
     print("1. Ingresar nuevo producto.")
     print("2. Ver productos.")
+    print("3. Eliminar producto.")
 
     print("0. Salir")
     opcion=int(input("Ingrese una opcion: "))
@@ -71,6 +89,8 @@ def menu():
         nuevo_producto()
     elif opcion==2:
         ver_productos()
+    elif opcion==3:
+        eliminar_producto()
     elif opcion ==0:
         quit()
     else:
